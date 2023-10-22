@@ -8,10 +8,9 @@ const dotenv = require("dotenv");
 
 // initialize the app
 const app = express();
-app.use(dotenv);
 dotenv.config();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3550;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
