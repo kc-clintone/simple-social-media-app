@@ -6,11 +6,15 @@ import {
   Image,
   KeyboardAvoidingView,
   TextInput,
+  Pressable,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -78,6 +82,40 @@ const LoginScreen = () => {
             </Text>
           </View>
         </View>
+
+        <View style={{ marginTop: 30 }} />
+
+        <TouchableOpacity style={styles.btn}>
+          <Text
+            style={{
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "white",
+              fontSize: 16,
+              width: "100%",
+              height: "100%",
+              padding: 15,
+              backgroundColor: "black",
+            }}
+          >
+            Login
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btn}>
+          <Text
+            style={{
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "black",
+              fontSize: 16,
+              width: "100%",
+              height: "100%",
+              padding: 15,
+            }}
+          >
+            Signup
+          </Text>
+        </TouchableOpacity>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -126,5 +164,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 3,
     marginTop: -18,
+  },
+  btn: {
+    borderWidth: 1,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 30,
+    width: 250,
+    marginRight: "auto",
+    marginLeft: "auto",
   },
 });
